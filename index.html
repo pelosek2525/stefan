@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ŠtefanoZdrojovátor</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&wght@700&display=swap">
+
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.min.js"
+			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			  crossorigin="anonymous"></script>
+
+
+
+<style>
+    *{
+        box-sizing:border-box;
+    }
+#loading-image{
+    display:none;
+}
+
+.zdroj{
+    display:block;
+    margin:10px;
+}
+#stefan{
+    display:block;
+}
+.btn{
+    padding:10px 15px;
+    margin:10px;
+    display:block;
+    border:none;
+    
+    border-bottom: 1px solid gray;
+    border-radius: 13px;
+    font-weight:bold;
+    color:black;
+    font-size:1rem;
+    
+}
+ul{
+    padding:0;
+}
+a.btn{
+    
+  
+    background-color: wheat;
+    display:inline-block;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+#potvrdit{
+    background-color:#bada55;
+}
+body{
+    
+    padding:20px;
+ 
+    background: #4776E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    display:flex;
+    align-items:flex-start;
+    justify-items:space-between;
+    font-family: 'Poppins', sans-serif; 
+}
+img {
+    margin:0 auto;
+}
+a:hover{
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+
+}
+main{
+    
+    padding:20px;
+    border-radius:15px;
+    background-color:white;
+    
+}
+.nadprvek{
+    margin:auto;
+}
+.showresults{
+    margin-top:-20px;
+    border-radius:15px;
+    background-color:white;
+    padding:20px;
+    font-weight:600;
+    font-size:21px;
+    border-top:none !important; 
+   transition:2s;
+}
+.card *{
+    text-align:center;
+    margin:auto;
+}
+input[type="url"]{
+    margin-bottom:10px;
+    font-weight:300;
+    font-size:16px;
+    padding:12px 25px;
+    border-radius:13px;
+    border: 1px solid gray;
+}
+
+</style>
+
+</head>
+<body>
+<div class="nadprvek">
+<main class="shadow">
+        
+
+        <div class="card ">
+   <a href="index.php"> <h1>ŠtefanoZdrojovátor</h1></a>
+    <img id="stefan" src="data:image/jpeg;base64,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" alt="">
+    <div id="loading-image"><img src="loader.gif" alt=""></div>
+    <p>Protože na faktech a pravdě záleží!</p>
+    <!-- <form action="zdroje.php" method="get"> -->
+    <ul class="zdroje">
+
+    </ul>
+   
+    <br>
+    <a class="btn" onclick="NovyZdroj()" href="#">Přidat zdroj</a>
+    <!-- <input class="btn" type="submit" value="S pravdou ven!">
+    </form> -->
+
+    <a class="btn" id="potvrdit"  href="#">S pravdou ven</a>
+    </div>
+    
+</main>
+<div id="results" style="display:none;" class="showresults shadow">
+        ff
+   
+    </div>
+</div>
+    
+
+<script src="app.js"></script>
+
+</body>
+</html>
