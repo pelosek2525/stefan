@@ -7,9 +7,9 @@ let pocetZdroju = 0;
 let zdrojaky = Array();
 
 var agent = navigator.userAgent;
-(function() {
-    var cors_api_host = 'cors-anywhere.herokuapp.com';
-    var cors_api_url = 'https://' + cors_api_host + '/';
+/*(function() {
+   var cors_api_host = 'cors-anywhere.herokuapp.com';
+    /var cors_api_url = 'https://' + cors_api_host + '/';
     var slice = [].slice;
     var origin = window.location.protocol + '//' + window.location.host;
     var open = XMLHttpRequest.prototype.open;
@@ -23,6 +23,7 @@ var agent = navigator.userAgent;
         return open.apply(this, args);
     };
 })();
+*/
 if(!agent.includes("Mozilla"))
 {
     console.log("Používáš mozilu");
