@@ -38,7 +38,9 @@ else {
                 if(validateUrl(text)){
                     event.target.value = text;
                  }
-            })
+            }).catch(err =>{
+               console.log(err);
+            }
            
             
      
