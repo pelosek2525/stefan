@@ -71,7 +71,7 @@ potrvrditBtn.addEventListener('click',(e) => {
 
     e.preventDefault();
     var audio = new Audio('smoke.mp3');
-    audio.volume = 0.05;
+    audio.volume = 1;
         
     let kokot = $("ul").children("input");
     let pole = kokot.toArray();
