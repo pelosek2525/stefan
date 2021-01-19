@@ -86,7 +86,7 @@ potrvrditBtn.addEventListener('click',(e) => {
     }).done(function( msg ) {
         //console.log(msg);
         $("#loading-image").hide();
-        $("#stefan").attr("src","stefanwin.png");
+        //$("#stefan").attr("src","stefanwin.png");
         $("#stefan").show(1000);
         audio.play();
         $("body,html").css("background-image", 'url(weed.jpg)');
